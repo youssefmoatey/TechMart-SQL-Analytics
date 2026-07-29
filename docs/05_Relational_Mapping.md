@@ -56,3 +56,121 @@ The following strong entities were identified in the TechMart system:
 - Payment
 
 At the end of this step, each entity exists as an independent relation with its own primary key and attributes.
+
+# Step 2 — Mapping One-to-Many Relationships
+
+After transforming all strong entities into independent relations, the next step is preserving the relationships between them.
+
+The TechMart system contains multiple **One-to-Many (1:M)** relationships. According to the relational mapping rules, the primary key from the **One** side is migrated to the **Many** side as a foreign key.
+
+The placement of each foreign key was determined based on the business requirements defined during the system analysis phase.
+
+---
+
+## Customer → Order
+
+### Business Rule
+
+A customer can place multiple orders, while each order belongs to exactly one customer.
+
+### Mapping Decision
+
+The primary key of the **Customer** relation (`CustomerID`) is migrated into the **Order** relation as a foreign key.
+
+Since an order cannot exist without a customer, the foreign key is defined as **NOT NULL**.
+
+```text
+Order
+---------
+OrderID (PK)
+CustomerID (FK) NOT NULL
+EmployeeID
+OrderDate
+OrderStatus
+```
+
+---
+
+## Category → Product
+
+### Business Rule
+
+Each category can contain multiple products, while every product must belong to exactly one category.
+
+### Mapping Decision
+
+The primary key of the **Category** relation (`CategoryID`) is migrated into the **Product** relation.
+
+Because every product must belong to a category according to the business requirements, the foreign key is **NOT NULL**.
+
+```text
+Product
+---------
+ProductID (PK)
+CategoryID (FK) NOT NULL
+ProductName
+ProductDescription
+ProductPrice
+ProductStock
+SupplierID
+```
+
+---
+
+## Supplier → Product
+
+### Business Rule
+
+A supplier can provide multiple products, while every product in the system must be supplied by exactly one supplier.
+
+### Mapping Decision
+
+The primary key of the **Supplier** relation (`SupplierID`) is migrated into the **Product** relation.
+
+Based on the project requirements, products cannot exist without an assigned supplier. Therefore, the foreign key is defined as **NOT NULL**.
+
+```text
+Product
+---------
+ProductID (PK)
+SupplierID (FK) NOT NULL
+ProductName
+ProductDescription
+ProductPrice
+ProductStock
+CategoryID
+```
+
+---
+
+## Branch → Employee
+
+### Business Rule
+
+Each branch can have multiple employees, while every employee works in exactly one branch.
+
+### Mapping Decision
+
+The primary key of the **Branch** relation (`BranchID`) is migrated into the **Employee** relation.
+
+Since every employee must belong to a branch, the foreign key is defined as **NOT NULL**.
+
+```text
+Employee
+---------
+EmployeeID (PK)
+BranchID (FK) NOT NULL
+FirstName
+LastName
+JobTitle
+HiringDate
+Salary
+```
+
+---
+
+## Summary
+
+All One-to-Many relationships were successfully transformed by migrating the primary key from the **One** side to the **Many** side as a foreign key.
+
+The nullability of each foreign key was determined according to the participation constraints and business requirements defined during the analysis phase.
