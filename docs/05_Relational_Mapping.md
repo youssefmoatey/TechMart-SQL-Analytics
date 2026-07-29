@@ -174,3 +174,69 @@ Salary
 All One-to-Many relationships were successfully transformed by migrating the primary key from the **One** side to the **Many** side as a foreign key.
 
 The nullability of each foreign key was determined according to the participation constraints and business requirements defined during the analysis phase.
+
+
+
+# Step 3 — Resolving the Many-to-Many Relationship
+
+One of the most important transformations during the relational mapping process is resolving **Many-to-Many (M:N)** relationships.
+
+Unlike conceptual models, relational databases cannot directly represent a many-to-many relationship. Therefore, an intermediate relation, known as an **Associative Entity** (or Junction Table), must be introduced.
+
+In the TechMart system, the relationship between **Order** and **Product** is a many-to-many relationship.
+
+---
+
+## Order ↔ Product
+
+### Business Rule
+
+An order can contain multiple products, and the same product can appear in multiple orders.
+
+This relationship cannot be implemented directly in a relational database.
+
+### Mapping Decision
+
+To resolve this relationship, a new relation named **OrderDetails** was created.
+
+The relation contains the primary keys of both participating entities as foreign keys. Together, these two foreign keys form a **Composite Primary Key**, ensuring that the same product cannot appear more than once within the same order.
+
+In addition to the foreign keys, the relation stores transactional attributes that belong specifically to each order item.
+
+---
+
+### OrderDetails Relation
+
+```text
+OrderDetails
+-----------------------------
+OrderID      (PK) (FK)
+ProductID    (PK) (FK)
+Quantity
+UnitPrice
+Discount
+
+
+Why was OrderDetails introduced?
+
+The OrderDetails relation serves two important purposes.
+
+First, it resolves the many-to-many relationship between orders and products.
+
+Second, it stores information that belongs to each purchased product rather than to the order itself.
+
+For example:
+
+- Quantity purchased
+- Product price at the time of purchase
+- Discount applied to that specific product
+
+These attributes cannot be stored in either the Order table or the Product table because they describe the relationship itself rather than either participating entity.
+
+### Design Consideration
+
+The product price is intentionally stored inside the OrderDetails relation instead of referencing the current product price.
+
+This preserves the historical accuracy of completed orders.
+
+For example, if the price of a product changes in the future, previous orders will continue to display the original purchase price recorded at the time of the transaction.
