@@ -240,3 +240,142 @@ The product price is intentionally stored inside the OrderDetails relation inste
 This preserves the historical accuracy of completed orders.
 
 For example, if the price of a product changes in the future, previous orders will continue to display the original purchase price recorded at the time of the transaction.
+
+
+
+---
+
+# Step 4 — Final Relational Schema
+
+After completing the relational mapping process, the following relations represent the final logical database schema for the TechMart Sales Management System.
+
+Each relation includes its attributes, primary key(s), and foreign key(s), and will be used directly during the SQL implementation phase.
+
+---
+
+## Customer
+
+```text
+Customer
+-------------------------
+CustomerID (PK)
+FirstName
+LastName
+CustomerPhoneNum
+CustomerEmail
+CustomerAddress
+```
+
+---
+
+## Category
+
+```text
+Category
+-------------------------
+CategoryID (PK)
+CategoryName
+```
+
+---
+
+## Supplier
+
+```text
+Supplier
+-------------------------
+SupplierID (PK)
+CompanyName
+PhoneNumber
+Email
+Address
+```
+
+---
+
+## Product
+
+```text
+Product
+-------------------------
+ProductID (PK)
+CategoryID (FK)
+SupplierID (FK)
+ProductName
+ProductDescription
+ProductPrice
+ProductStock
+```
+
+---
+
+## Branch
+
+```text
+Branch
+-------------------------
+BranchID (PK)
+BranchName
+City
+Address
+Phone
+```
+
+---
+
+## Employee
+
+```text
+Employee
+-------------------------
+EmployeeID (PK)
+BranchID (FK)
+FirstName
+LastName
+JobTitle
+HiringDate
+Salary
+IsManager
+```
+
+---
+
+## Order
+
+```text
+Order
+-------------------------
+OrderID (PK)
+CustomerID (FK)
+EmployeeID (FK)
+OrderDate
+OrderStatus
+```
+
+---
+
+## Payment
+
+```text
+Payment
+-------------------------
+PaymentID (PK)
+OrderID (FK)
+PaymentAmount
+PaymentDate
+PaymentMethod
+```
+
+---
+
+## OrderDetails
+
+```text
+OrderDetails
+-------------------------
+OrderID (PK) (FK)
+ProductID (PK) (FK)
+Quantity
+UnitPrice
+Discount
+```
