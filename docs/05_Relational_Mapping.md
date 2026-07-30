@@ -253,6 +253,7 @@ Each relation includes its attributes, primary key(s), and foreign key(s), and w
 
 ---
 
+
 ## Customer
 
 ```text
