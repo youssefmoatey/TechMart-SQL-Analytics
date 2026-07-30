@@ -326,16 +326,18 @@ Phone
 
 ```text
 Employee
--------------------------
+----------------------------
 EmployeeID (PK)
-BranchID (FK)
-FirstName
-LastName
-JobTitle
-HiringDate
+EmployeeName
 Salary
-IsManager
+HiringDate
+BranchID (FK)
+ManagerID (FK → Employee.EmployeeID)
 ```
+
+The Employee relation contains a self-referencing foreign key (ManagerID) to represent the reporting hierarchy inside the company.
+
+A manager is also stored as an employee. Therefore, each employee may reference another employee as their direct manager, while top-level managers have a NULL value in ManagerID.
 
 ---
 
