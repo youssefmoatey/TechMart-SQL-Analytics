@@ -1,0 +1,14 @@
+Use TechMartDB
+GO
+
+--Create Customer Table
+
+CREATE TABLE Customer
+(
+	CustomerID INT IDENTITY(1,1) PRIMARY KEY,
+	FirstName NVARCHAR(50) NOT NULL,
+	LastName NVARCHAR(50) NOT NULL,
+	PhoneNumber VARCHAR(11) NOT NULL,
+	Email VARCHAR(255) NOT NULL,
+	Address NVARCHAR(200)  NOT NULL
+);
