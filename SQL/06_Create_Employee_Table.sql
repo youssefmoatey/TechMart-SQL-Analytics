@@ -15,3 +15,16 @@ CREATE TABLE Employee
 		FOREIGN KEY (BranchID)
 		REFERENCES Branch(BranchID)
 );
+
+ALTER TABLE Employee
+ADD  ManagerID INT NULL
+
+ALTER TABLE Employee
+ADD CONSTRAINT FK_Employee_Manager
+	FOREIGN KEY (ManagerID)
+	REFERENCES Employee(EmployeeID)
+
+
+
+
+
