@@ -1,0 +1,20 @@
+--Create Branch Table
+
+CREATE TABLE Branch
+(
+	BranchID INT IDENTITY(1,1),
+	BranchName NVARCHAR(50) NOT NULL,
+	Phone VARCHAR(15) NOT NULL,
+	Address NVARCHAR(200) NOT NULL,
+	City NVARCHAR(100) NOT NULL,
+
+
+	CONSTRAINT PK_Branch
+		PRIMARY KEY(BranchID),
+
+	CONSTRAINT UQ_BranchName
+		UNIQUE (BranchName),
+
+	CONSTRAINT UQ_Phone
+		UNIQUE (Phone)
+);
