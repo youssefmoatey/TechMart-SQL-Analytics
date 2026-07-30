@@ -216,7 +216,7 @@ Quantity
 UnitPrice
 Discount
 
-
+```
 Why was OrderDetails introduced?
 
 The OrderDetails relation serves two important purposes.
@@ -241,8 +241,9 @@ This preserves the historical accuracy of completed orders.
 
 For example, if the price of a product changes in the future, previous orders will continue to display the original purchase price recorded at the time of the transaction.
 
+```
 
-
+```
 ---
 
 # Step 4 — Final Relational Schema
@@ -253,10 +254,16 @@ Each relation includes its attributes, primary key(s), and foreign key(s), and w
 
 ---
 
-## Customer
+```
+
+```
+
+---
+
+## Cusomer
 
 ```text
-Customer
+Category
 -------------------------
 CustomerID (PK)
 FirstName
