@@ -5,6 +5,7 @@ CREATE TABLE Employee
 	EmployeeID INT IDENTITY(1,1),
 	FirstName NVARCHAR(50) NOT NULL,
 	LastName NVARCHAR(50) NOT NULL,
+	JobTitel NVARCHAR(50) NOT NULL,
 	Salary DECIMAL(10,2) NOT NULL,
 	HiringDate DATE NOT NULL,
 	BranchID INT NOT NULL,
@@ -22,7 +23,11 @@ CREATE TABLE Employee
 	REFERENCES Employee(EmployeeID)
 );
 
+
 SELECT * FROM Employee;
+
+
+
 
 
 
