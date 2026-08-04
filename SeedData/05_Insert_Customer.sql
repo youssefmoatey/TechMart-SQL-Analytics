@@ -1,0 +1,72 @@
+SELECT *
+FROM Customer
+--add City Column
+ALTER TABLE Customer
+ADD City NVARCHAR(50) NOT NULL
+
+
+--Isert Data To Customer Table
+INSERT INTO Customer(
+	FirstName ,
+	LastName ,
+	PhoneNumber ,
+	Email ,
+	Address ,
+	City
+)
+VALUES
+('Ahmed','Hassan','01010000011','ahmed.hassan@gmail.com','Nasr City','Cairo'),
+('Mohamed','Ali','01110000012','mohamed.ali@gmail.com','Maadi','Cairo'),
+('Sara','Ibrahim','01210000013','sara.ibrahim@gmail.com','Heliopolis','Cairo'),
+('Omar','Khaled','01510000014','omar.khaled@gmail.com','Downtown','Cairo'),
+('Mariam','Ahmed','01010000015','mariam.ahmed@gmail.com','New Cairo','Cairo'),
+('Mahmoud','Nasser','01110000016','mahmoud.nasser@gmail.com','Shubra','Cairo'),
+('Nour','Mohamed','01210000017','nour.mohamed@gmail.com','Ain Shams','Cairo'),
+('Youssef','Moatey','01510000018','youssef.moatey@gmail.com','Nasr City','Cairo'),
+('Karim','Adel','01010000019','karim.adel@gmail.com','Mokattam','Cairo'),
+('Salma','Mostafa','01110000020','salma.mostafa@gmail.com','Zamalek','Cairo'),
+('Hossam','Samir','01210000021','hossam.samir@gmail.com','Dokki','Giza'),
+('Nada','Ali','01510000022','nada.ali@gmail.com','Mohandessin','Giza'),
+('Amr','Fathy','01010000023','amr.fathy@gmail.com','Sheikh Zayed','Giza'),
+('Aya','Sherif','01110000024','aya.sherif@gmail.com','6th October','Giza'),
+('Mostafa','Maher','01210000025','mostafa.maher@gmail.com','Haram','Giza'),
+('Ahmed','Hassan','01027491836','ahmed.hassan@gmail.com','Abbas El Akkad St.','Cairo'),
+('Mohamed','Nasser','01158302741','mohamed.nasser@gmail.com','Heliopolis','Cairo'),
+('Omar','Khaled','01246819375','omar.khaled@gmail.com','Maadi','Cairo'),
+('Karim','Adel','01572184063','karim.adel@gmail.com','Nasr City','Cairo'),
+('Mahmoud','Fathy','01093647182','mahmoud.fathy@gmail.com','Downtown','Cairo'),
+('Youssef','Mostafa','01124869035','youssef.mostafa@gmail.com','New Cairo','Cairo'),
+('Sherif','Samir','01271548396','sherif.samir@gmail.com','Mokattam','Cairo'),
+('Amr','Reda','01539817420','amr.reda@gmail.com','Dokki','Giza'),
+('Hossam','Maher','01048271695','hossam.maher@gmail.com','Mohandessin','Giza'),
+('Ibrahim','Tarek','01169528431','ibrahim.tarek@gmail.com','Sheikh Zayed','Giza'),
+('Mariam','Ahmed','01258193746','mariam.ahmed@gmail.com','Smouha','Alexandria'),
+('Salma','Ali','01517482963','salma.ali@gmail.com','Stanley','Alexandria'),
+('Aya','Ibrahim','01076829415','aya.ibrahim@gmail.com','Sidi Gaber','Alexandria'),
+('Farah','Mohamed','01193284751','farah.mohamed@gmail.com','Miami','Alexandria'),
+('Malak','Hassan','01238471629','malak.hassan@gmail.com','Sporting','Alexandria'),
+('Nada','Mostafa','01562918374','nada.mostafa@gmail.com','Talkha','Dakahlia'),
+('Reem','Mahmoud','01052178493','reem.mahmoud@gmail.com','Mansoura','Dakahlia'),
+('Hana','Nabil','01187432965','hana.nabil@gmail.com','Mansoura University District','Dakahlia'),
+('Yasmine','Kamal','01294738152','yasmine.kamal@gmail.com','R3 District','New Administrative Capital'),
+('Menna','Wael','01548392716','menna.wael@gmail.com','Government District','New Administrative Capital'),
+('Ziad','Shawky','01064285731','ziad.shawky@gmail.com','Garden City','Cairo'),
+('Tamer','Gaber','01173645128','tamer.gaber@gmail.com','Zamalek','Cairo'),
+('Walid','Saber','01295841376','walid.saber@gmail.com','El Rehab','Cairo'),
+('Bassel','Anwar','01534792681','bassel.anwar@gmail.com','Madinaty','Cairo'),
+('Mina','Naguib','01051729384','mina.naguib@gmail.com','Shoubra','Cairo'),
+('Ramy','Fouad','01148372915','ramy.fouad@gmail.com','Faisal','Giza'),
+('Bishoy','Kamel','01236194758','bishoy.kamel@gmail.com','6th October','Giza'),
+('Hazem','Yasser','01581924736','hazem.yasser@gmail.com','Agouza','Giza'),
+('Ayman','Ragab','01029384716','ayman.ragab@gmail.com','Bolkly','Alexandria'),
+('Samy','Ezzat','01152738496','samy.ezzat@gmail.com','Gleem','Alexandria'),
+('Fady','Morris','01241859637','fady.morris@gmail.com','Mandara','Alexandria'),
+('George','Nabil','01569284135','george.nabil@gmail.com','Roushdy','Alexandria'),
+('Rania','Ashraf','01082473519','rania.ashraf@gmail.com','Louran','Alexandria'),
+('Doaa','Magdy','01136572849','doaa.magdy@gmail.com','El Mashaya','Dakahlia'),
+('Dina','Hany','01263719485','dina.hany@gmail.com','Toriel','Dakahlia'),
+('Shimaa','Saeed','01527483916','shimaa.saeed@gmail.com','Mit Ghamr','Dakahlia'),
+('Nesma','Gamal','01095837421','nesma.gamal@gmail.com','West District','New Administrative Capital'),
+('Habiba','Raouf','01124795836','habiba.raouf@gmail.com','R7 District','New Administrative Capital'),
+('Abdelrahman','Lotfy','01283641795','abdelrahman.lotfy@gmail.com','El Nozha','Cairo'),
+('Islam','Hamdy','01549173826','islam.hamdy@gmail.com','Sheraton','Cairo');
