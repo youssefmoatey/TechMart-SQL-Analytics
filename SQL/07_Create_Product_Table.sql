@@ -30,3 +30,8 @@ CREATE TABLE Product
         FOREIGN KEY (SupplierID)
         REFERENCES Supplier(SupplierID)
 );
+
+ALTER TABLE Product
+ADD CostPrice DECIMAL(10,2) NOT NULL
+
+SELECT * FROM Product
